@@ -16,7 +16,7 @@ const { service } = Astro.props;
   imgSrc={service.data.imgUrl}
   description={service.data.description}
 >
-  <div class="flex justify-end my-4">
+  <div class="flex justify-end my-4 text-lg">
     <Button href={`/services/${service.slug}/`}>Quiero saber más &rarr;</Button>
   </div>
 </SummaryCard>

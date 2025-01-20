@@ -9,61 +9,44 @@ const { color } = Astro.props;
 ---
 
 <div class="min-h-screen brutal-card p-4 sm:p-6 md:p-8">
-  <form class="space-y-8 w-full max-w-7xl mx-auto">
+  <form
+    id="serviceForm"
+    class="space-y-8 w-full max-w-7xl mx-auto"
+    method="post"
+  >
     <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 sanchez">
       Agenda tu Servicio
     </h1>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 brutal-card"
-    >
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- complete name input -->
       <div class="space-y-2 p-4 brutal-card rounded-lg shadow-lg">
-        <label for="name" class="block">Nombre Completo</label>
+        <label for="completeName" class="block">Nombre Completo</label>
         <input
-          id="name"
+          id="completeName"
           class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
           required
         />
       </div>
 
-      <div class="space-y-2 p-4 brutal-card rounded-lg shadow-lg">
-        <label for="email" class="block">Dirección de recogida</label>
-        <input
-          id="address"
-          class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
-          required
-        />
-      </div>
-
+      <!-- contact input -->
       <div
         class="space-y-2 p-4 bg-slate-800 bg-opacity-50 rounded-lg shadow-lg brutal-card"
       >
-        <label for="whatsapp" class="block"
-          >Número de celular y/o WhatsApp</label
-        >
+        <label for="contact">Número de contacto</label>
         <input
-          id="specialty"
+          id="contact"
           class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
+          maxlength="10"
           required
         />
       </div>
 
+      <!-- type of service input -->
       <div
         class="space-y-2 p-4 bg-slate-800 bg-opacity-50 rounded-lg shadow-lg brutal-card"
       >
-        <label for="birthdate" class="block">Fecha de recogida</label>
-        <input
-          type="date"
-          id="birthdate"
-          class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
-          required
-        />
-      </div>
-
-      <div
-        class="space-y-2 p-4 bg-slate-800 bg-opacity-50 rounded-lg shadow-lg brutal-card"
-      >
-        <label for="service" class="block">¿Que le haremos a tu PC?</label>
+        <label for="service">¿Que le haremos a tu PC?</label>
         <select
           id="service"
           class="w-full bg-slate-700 text-white rounded-md p-2"
@@ -74,54 +57,56 @@ const { color } = Astro.props;
           >
           <option value="software_maintenance">Mantenimiento de Software</option
           >
-          <option value="jupiter">Cotizar una reparación de Hardware</option>
-          <option value="saturn"
+          <option value="hardware_repair"
+            >Cotizar una reparación de Hardware</option
+          >
+          <option value="software_repair"
             >Formatear mi PC / Reparación de Software</option
           >
-          <option value="earth">Ampliar la memoria RAM</option>
-          <option value="mars">Ampliar el SSD</option>
+          <option value="ram_upgrade">Ampliar la memoria RAM</option>
+          <option value="ssd_upgrade">Ampliar el SSD</option>
         </select>
       </div>
 
+      <!-- date input -->
       <div
         class="space-y-2 p-4 bg-slate-800 bg-opacity-50 rounded-lg shadow-lg brutal-card"
       >
-        <label for="experience" class="block"
-          >Años de Experiencia Espacial</label
-        >
+        <label for="date">Fecha de recogida</label>
         <input
-          type="number"
-          id="experience"
-          min="0"
-          max="100"
-          class="w-full bg-slate-700 text-light border-cyan-400 rounded-md p-2"
+          type="date"
+          id="date"
+          name="date"
+          class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
           required
         />
       </div>
 
-      <div
-        class="space-y-2 p-4 bg-slate-800 bg-opacity-50 rounded-lg shadow-lg md:col-span-2 lg:col-span-3 brutal-card"
-      >
-        <label for="mission-preference" class="block"
-          >Describe más detalles sobre el problema</label
-        >
-        <textarea
-          id="mission-preference"
-          class="w-full bg-slate-700 text-white rounded-md p-2"
-          rows="3"
-          required></textarea>
-      </div>
-
-      <div
-        class="flex items-center space-x-2 p-4 bg-slate-800 rounded-lg shadow-lg md:col-span-2 lg:col-span-3 brutal-card"
-      >
-        <input type="checkbox" id="agree" class="" required />
-        <label for="agree" class=""> Acepto los términos y condiciones</label>
+      <!-- address input -->
+      <div class="space-y-2 p-4 brutal-card rounded-lg shadow-lg lg:col-span-2">
+        <label for="address" class="block">Dirección de recogida</label>
+        <input
+          id="address"
+          name="address"
+          type="text"
+          class="w-full bg-slate-700 text-white border-cyan-400 rounded-md p-2"
+          required
+        />
       </div>
     </div>
 
+    <!-- terms and conditions -->
+    <div
+      class="flex items-center space-x-2 p-4 bg-slate-800 rounded-lg shadow-lg md:col-span-2 lg:col-span-3 brutal-card"
+    >
+      <input type="checkbox" id="agree" class="" required />
+      <label for="agree" class=""> Acepto los términos y condiciones</label>
+    </div>
+
+    <!-- submit button -->
     <button
       type="submit"
+      form="serviceForm"
       class="w-full brutal-btn font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
     >
       Solicitar Servicio
