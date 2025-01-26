@@ -1,11 +1,12 @@
 ---
 interface Props {
-  content: any;
+  title: string;
+  duration: string;
+  price: number;
 }
 
-const { content } = Astro.props;
+const { title, duration, price } = Astro.props;
 
-const price = content.price;
 const formatter = new Intl.NumberFormat("es-CO", {
   style: "currency",
   currency: "COP",
@@ -17,9 +18,9 @@ const formattedPrice = formatter.format(price);
   <a href="/services/" title="Back to services"
     >&larr; Volver a todos los servicios</a
   >
-  <h1>{content.title}</h1>
+  <h1>{title}</h1>
   <p class="text-slate text-sm md:text-base">
-    Duración del servicio: {content.duration}
+    Duración del servicio: {duration}
   </p>
   <p class="text-slate">Precio: {formattedPrice}</p>
   <slot />

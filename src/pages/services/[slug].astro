@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render, getCollection } from "astro:content";
+import Layout from "@layouts/ServicesDetails.astro";
 
 export async function getStaticPaths() {
   const servicesEntries = await getCollection("services");
@@ -15,7 +15,9 @@ interface Props {
 }
 
 const { service } = Astro.props;
-const { Content } = await service.render();
+const { Content, headings } = await service.render();
 ---
 
-<Content />
+<Layout title={service.data.title} headings={headings}, price={service.data.price}, duration={service.data.duration}>
+  <Content />
+</Layout>
