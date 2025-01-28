@@ -4,7 +4,7 @@ description: Solución de fallos en componentes físicos como fuentes de poder, 
 price: 120000
 duration: 3 horas
 imgUrl: '../../assets/hardware_repair.webp'
-layout: '../../layouts/ServicesList.astro'
+slug: hardware-repair
 ---
 
 ## Preparación inicial

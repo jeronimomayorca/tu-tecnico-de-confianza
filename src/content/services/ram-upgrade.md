@@ -4,7 +4,7 @@ description: Instalación y configuración de módulos de memoria RAM compatible
 price: 100000
 duration: 30 minutos
 imgUrl: '../../assets/ram_upgrade.webp'
-layout: '../../layouts/ServicesList.astro'
+slug: ram-upgrade
 ---
 
 ## Preparación inicial

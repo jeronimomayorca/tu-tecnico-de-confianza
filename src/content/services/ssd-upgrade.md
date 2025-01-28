@@ -4,7 +4,7 @@ description: Sustitución de disco duro por un SSD para mejorar la velocidad y l
 price: 150000
 duration: 1 hora
 imgUrl: '../../assets/ssd_upgrade.webp'
-layout: '../../layouts/ServicesList.astro'
+slug: ssd-upgrade
 ---
 
 ## Procedimiento detallado

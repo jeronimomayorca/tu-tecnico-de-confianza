@@ -4,7 +4,7 @@ description: Se desarmará por completo el equipo, se le hará una limpieza prof
 price: 70000
 duration: 2 horas
 imgUrl: '../../assets/hardware_maintenance.webp'
-layout: '../../layouts/ServicesList.astro'
+slug: maintenance
 ---
 
 ## Limpieza externa e interna del equipo

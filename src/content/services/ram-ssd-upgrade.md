@@ -4,7 +4,7 @@ description: Actualización combinada de memoria RAM y disco sólido para maximi
 price: 240000
 duration: 1 hora y 30 minutos
 imgUrl: '../../assets/ram_ssd_upgrade.webp'
-layout: '../../layouts/ServicesList.astro'
+slug: ram-ssd-upgrade
 ---
 
 ## Preparación inicial

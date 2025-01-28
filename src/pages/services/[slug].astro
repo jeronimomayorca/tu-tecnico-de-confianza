@@ -1,13 +1,14 @@
 ---
-import { type CollectionEntry, render, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@layouts/ServicesDetails.astro";
 
 export async function getStaticPaths() {
   const servicesEntries = await getCollection("services");
-  return servicesEntries.map((service) => ({
-    params: { slug: service.slug },
+  const paths = servicesEntries.map((service) => ({
+    params: { slug: service.slug || service.id },
     props: { service },
   }));
+  return paths;
 }
 
 interface Props {
@@ -15,9 +16,14 @@ interface Props {
 }
 
 const { service } = Astro.props;
-const { Content, headings } = await service.render();
+const { Content, headings } = await render(service);
 ---
 
-<Layout title={service.data.title} headings={headings}, price={service.data.price}, duration={service.data.duration}>
+<Layout
+  title={service.data.title}
+  headings={headings}
+  price={service.data.price}
+  duration={service.data.duration}
+>
   <Content />
 </Layout>
