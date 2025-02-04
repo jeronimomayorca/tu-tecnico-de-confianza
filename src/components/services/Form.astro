@@ -109,8 +109,70 @@ const { color } = Astro.props;
       form="serviceForm"
       class="w-full brutal-btn font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105"
     >
-      Solicitar Servicio
+      <!-- <link
+        href="https://assets.calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        type="text/javascript"
+        async></script>
+      <script type="text/javascript">
+        window.onload = function () {
+          Calendly.initBadgeWidget({
+            url: "https://calendly.com/agenda-tu-servicio?hide_landing_page_details=1&hide_gdpr_banner=1",
+            text: "Schedule time with me",
+            color: "#0069ff",
+            textColor: "#ffffff",
+            branding: true,
+          });
+        };
+      </script> -->
+
+       Solicitar Servicio
     </button>
+
+    <!-- Calendly badge widget begin -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/mayorcajeronimo/agenda-tu-servicio?hide_event_type_details=1&hide_gdpr_banner=1",
+          text: "Agenda tu servicio",
+          color: "#0069ff",
+          textColor: "#ffffff",
+        });
+      };
+    </script>
+
+    <!-- Calendly badge widget begin -->
+    <!-- <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/agenda-tu-servicio?hide_landing_page_details=1&hide_gdpr_banner=1",
+          text: "Schedule time with me",
+          color: "#0069ff",
+          textColor: "#ffffff",
+          branding: true,
+        });
+      };
+    </script> -->
+    <!-- Calendly badge widget end -->
   </form>
 </div>
 
