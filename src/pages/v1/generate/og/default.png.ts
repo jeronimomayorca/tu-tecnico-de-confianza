@@ -31,7 +31,7 @@ export const GET: APIRoute = async () => {
   </div>
   `);
 
-  const svg = await satori(html, {
+  const svg = await satori(html as unknown as React.ReactNode, {
     fonts: [
       {
         name: "Inter Latin",
@@ -39,7 +39,6 @@ export const GET: APIRoute = async () => {
         style: "normal",
       },
     ],
-
     height,
     width,
   });

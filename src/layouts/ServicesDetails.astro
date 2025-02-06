@@ -4,8 +4,10 @@ import ServicesSideBar from "@components/services/ServicesSideBar.astro";
 import ServicesContent from "@components/services/ServicesContent.astro";
 import FeaturedServices from "@components/generic/FeaturedServices.astro";
 
-const ogImage = new URL(`/v1/generate/og/${Astro.params.someProperty}.png`, Astro.url);
-const someProperty = Astro.params.someProperty;
+const ogImage = new URL(
+  `/v1/generate/og/${Astro.params.someProperty}.png`,
+  Astro.url
+);
 const { headings, description, title, duration, price } = Astro.props;
 ---
 

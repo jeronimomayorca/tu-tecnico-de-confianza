@@ -87,7 +87,32 @@ const { pageTitle } = Astro.props;
   </nav>
   <nav class="md:hidden flex">
     <ul>
-      <li><a href="/BookService">Agendar un servicio</a></li>
+      {
+        calendlyButton.map((item) => (
+          <>
+            <link
+              href="https://assets.calendly.com/assets/external/widget.css"
+              rel="stylesheet"
+            />
+            <script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              type="text/javascript"
+              async
+            />
+            <li>
+              <a
+                class="text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out"
+                href={item.url}
+                target="_blank"
+                title={`Agendar una cita`}
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tutecnicodeconfianza6/agendarservicio'});return false;"
+              >
+                {item.name}
+              </a>
+            </li>
+          </>
+        ))
+      }
     </ul>
   </nav>
 </header>
