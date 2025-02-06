@@ -3,41 +3,40 @@ interface Props {
   pageTitle?: string;
 }
 
-const navigationItems = [
-  { name: 'Inicio', url: '/' },
-  { name: 'Agenda tu servicio', url: '/services/BookService/' },
-];
+const navigationItems = [{ name: "Inicio", url: "/" }];
+
+const calendlyButton = [{ name: "Agendar un servicio", url: "" }];
 
 const socialIcons = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/jeronimomayorca',
-    icon: 'i-uil-github',
+    name: "Whatsapp",
+    url: "https://wa.me/3022719698",
+    icon: "i-uil-whatsapp",
   },
   {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/jeronimomayorcaar',
-    icon: 'i-uil-instagram',
+    name: "Portfolio",
+    url: "https://jeronimomayorca.vercel.app/",
+    icon: "i-uil-globe",
   },
 ];
 
 const { pageTitle } = Astro.props;
 ---
 
-<header class='border-b-4 border-black flex justify-between p-6 items-center'>
-  {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
-  <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Tu Técnico De Confianza</p>
+<header class="border-b-4 border-black flex justify-between p-6 items-center">
+  {pageTitle && <h1 class="hidden">{pageTitle}</h1>}
+  <a href="/" title="Voler al inicio">
+    <p class="righteous md:text-5xl">Tu Técnico De Confianza</p>
   </a>
-  <nav class='hidden md:inline-block'>
-    <ul class='flex gap-8 poppins'>
+  <nav class="hidden md:inline-block">
+    <ul class="flex gap-8 poppins">
       {
         navigationItems.map((item) => (
           <li>
             <a
-              class='text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
+              class="text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out"
               href={item.url}
-              title={`Go to ${item.name}`}
+              title={`Ir a ${item.name}`}
             >
               {item.name}
             </a>
@@ -45,24 +44,50 @@ const { pageTitle } = Astro.props;
         ))
       }
       {
+        calendlyButton.map((item) => (
+          <>
+            <link
+              href="https://assets.calendly.com/assets/external/widget.css"
+              rel="stylesheet"
+            />
+            <script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              type="text/javascript"
+              async
+            />
+            <li>
+              <a
+                class="text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out"
+                href={item.url}
+                target="_blank"
+                title={`Agendar una cita`}
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tutecnicodeconfianza6/agendarservicio'});return false;"
+              >
+                {item.name}
+              </a>
+            </li>
+          </>
+        ))
+      }
+      {
         socialIcons.map((item) => (
           <li>
             <a
               href={item.url}
-              class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
-              target='_blank'
-              title={`'See @jeronimomayorca on ${item.name}`}
+              class="hover:text-green hover:underline transition-all duration-150 ease-in-out"
+              target="_blank"
+              title={`'Ver @jeronimomayorca on ${item.name}`}
             >
-              <div class:list={[item.icon, 'w-6 h-6']} />
+              <div class:list={[item.icon, "w-6 h-6"]} />
             </a>
           </li>
         ))
       }
     </ul>
   </nav>
-  <nav class='md:hidden flex'>
+  <nav class="md:hidden flex">
     <ul>
-      <li><a href='/services/'>Nuestros Servicios</a></li>
+      <li><a href="/BookService">Agendar un servicio</a></li>
     </ul>
   </nav>
 </header>
