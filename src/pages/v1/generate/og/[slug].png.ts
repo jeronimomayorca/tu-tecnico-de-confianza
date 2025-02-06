@@ -24,7 +24,7 @@ export function getStaticPaths() {
   }));
 }
 
-export const GET: APIRoute = async ({ params, props }) => {
+export const GET: APIRoute = async ({ props }) => {
   const title = props.title.trim() ?? "ServicesDetails";
   const description = props.description ?? null;
   const html = toReactElement(`
@@ -46,7 +46,7 @@ export const GET: APIRoute = async ({ params, props }) => {
   </div>
   `);
 
-  const svg = await satori(html, {
+  const svg = await satori(html as unknown as React.ReactNode, {
     fonts: [
       {
         name: "Inter Latin",
