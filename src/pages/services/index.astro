@@ -2,6 +2,13 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Default.astro";
 import ServicesList from "@components/services/ServicesList.astro";
+import colors from "@config/colors.json";
+
+if (Astro.props.color === undefined) {
+  Astro.props.color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+const { color } = Astro.props;
 
 const service = await getCollection("services").then((collection) =>
   collection.reverse()
@@ -13,7 +20,13 @@ const service = await getCollection("services").then((collection) =>
   description="acá encontrarás mas información acerca de todos los servicios que tenemos para dejar tu pc tocho"
   pageTitle="Servicios"
 >
-  <main class="bg-rose-500 p-6">
+  <main class="random-bg p-6">
     <ServicesList services={service} />
   </main>
 </Layout>
+
+<style define:vars={{ color: color }}>
+  .random-bg {
+    background-color: var(--color);
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import FeaturedServices from "@components/generic/FeaturedServices.astro";
+import Layout from "@layouts/Default.astro";
+import colors from "@config/colors.json";
+
+if (Astro.props.color === undefined) {
+  Astro.props.color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+const { color } = Astro.props;
+---
+
+<Layout
+  title="Servicio agendado"
+  description="Has agendado tu servicio exitosamente"
+  classList="h-full"
+  pageTitle="Page Not Found!"
+>
+  <main class="random-bg px-6 py-24">
+    <section class="flex flex-col gap-8 justify-between">
+      <p class="text-5xl font-bold dm-serif">
+        ✅ ¡Listo! Tu servicio ha sido programado.
+      </p>
+      <h2 class="text-4xl outfit">
+        Nos comunicaremos pronto para confirmar tu orden.
+      </h2>
+      <a
+        href="/"
+        title="Volver al Inicio"
+        class="px-4 py-2 border-2 border-black hover:bg-red transition-colors duration-150 ease-in-out w-48 text-center poppins"
+        >&larr; Ir al inicio</a
+      >
+      <h2 class="text-2xl text-end">
+        Mientras tanto, si tienes dudas, puedes escribirnos por <a
+          class="underline"
+          title="Ir al WhatsApp"
+          href="https://wa.me/3022719698"
+          target="_blank">WhatsApp</a
+        >.
+      </h2>
+      <p class="text-xl sm:text-3xl sanchez">
+        ¿Buscas más mejoras para tu PC? 👇🏻
+      </p>
+    </section>
+    <FeaturedServices />
+  </main>
+</Layout>
+
+<style define:vars={{ color: color }}>
+  .random-bg {
+    background-color: var(--color);
+  }
+</style>
