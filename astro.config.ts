@@ -1,9 +1,7 @@
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import UnoCSS from "unocss/astro";
-
 import tailwindIntegration from "@astrojs/tailwind";
-
 import db from "@astrojs/db";
 
 export default defineConfig({
