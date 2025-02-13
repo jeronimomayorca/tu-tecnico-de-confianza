@@ -1,91 +1,91 @@
 # Tu Técnico de Confianza
 
-Una web diseñada para reservar servicios de mantenimiento, reparaciones y actualizaciones para tu PC
+A web platform designed to book maintenance, repair, and upgrade services for your PC.
 
-## Acerca del Proyecto
+## About the Project
 
-"Tu Técnico de Confianza" es una plataforma web que facilita a los usuarios la reserva de servicios para el mantenimiento, reparación y mejora de sus PCs. Desarrollada con tecnologías modernas y siguiendo las mejores prácticas de código, esta aplicación está pensada para brindar una experiencia sencilla, rápida y eficiente.
+"Your Trusted Technician" is a web platform that makes it easy for users to book services for maintaining, repairing, and upgrading their PCs. Developed with modern technologies and following best coding practices, this application is designed to provide a simple, fast, and efficient user experience.
 
-## Características
+## Features
 
-- **Reservas Online:** Agenda de manera fácil y rápida los servicios que necesites.
-- **Interfaz Responsiva:** Adaptada para funcionar perfectamente en dispositivos móviles y de escritorio.
-- **Tecnologías Modernas:** Construida con [Astro](https://astro.build), TypeScript, Tailwind CSS y un toque de JavaScript, garantizando rendimiento y escalabilidad.
-- **Diseño Intuitivo:** Pensada para ofrecer una experiencia de usuario óptima y amigable.
+- **Online Booking:** Schedule the services you need quickly and easily.
+- **Responsive Interface:** Adapted to work perfectly on both mobile and desktop devices.
+- **Modern Technologies:** Built with [Astro](https://astro.build), TypeScript, Tailwind CSS, and a touch of JavaScript, ensuring performance and scalability.
+- **Intuitive Design:** Designed to offer an optimal and user-friendly experience.
 
-## Instalación
+## Installation
 
-Para instalar y ejecutar el proyecto en tu máquina, sigue estos pasos:
+To install and run the project on your machine, follow these steps:
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
     ```bash
     git clone https://github.com/jeronimomayorca/tu-tecnico-de-confianza.git
     ```
-2. **Accede al directorio del proyecto:**
+2. **Access the project directory:**
     ```bash
     cd tu-tecnico-de-confianza
     ```
-3. **Instala las dependencias:**
+3. **Install dependencies:**
     ```bash
     npm install
     ```
-    O, si prefieres usar PNPM:
+    Or, if you prefer to use PNPM:
     ```bash
     pnpm install
     ```
-4. **Ejecuta el proyecto en modo desarrollo:**
+4. **Run the project in development mode:**
     ```bash
     npm run dev
     ```
-    Luego, abre tu navegador en [http://localhost:3000](http://localhost:3000) para ver la aplicación en acción.
+    Then, open your browser at [http://localhost:3000](http://localhost:3000) to see the application in action.
 
-## Uso
+## Usage
 
-Una vez que el proyecto está corriendo, la aplicación te permite:
-- Seleccionar el servicio de mantenimiento, reparación o actualización que necesitas.
-- Escoger la fecha y hora para la cita.
-- Confirmar la reserva y recibir notificaciones sobre el estado de tu servicio.
+Once the project is running, the application allows you to:
+- Select the maintenance, repair, or upgrade service you need.
+- Choose the date and time for your appointment.
+- Confirm the booking and receive notifications about your service status.
 
-Todo ha sido diseñado para que tu experiencia sea lo más fluida y sencilla posible.
+Everything is designed to make your experience as smooth and simple as possible.
 
-## Estructura del Proyecto
+## Project Structure
 
-El proyecto se organiza en los siguientes directorios y archivos principales:
+The project is organized into the following main directories and files:
 
-- **`src/`**: Contiene el código fuente de la aplicación.
-- **`public/`**: Archivos públicos (imágenes, assets, etc.).
-- **`db/`**: Configuraciones y scripts relacionados con la base de datos.
-- Archivos de configuración importantes como:
+- **`src/`**: Contains the application source code.
+- **`public/`**: Public files (images, assets, etc.).
+- **`db/`**: Database-related configurations and scripts.
+- Important configuration files such as:
   - `astro.config.ts`
   - `tailwind.config.mjs`
   - `tsconfig.json`
-  - Entre otros.
+  - And more.
 
-## Contribuciones
+## Contributions
 
-Si deseas aportar al proyecto, estaré encantado de recibir tu ayuda. Sigue estos pasos para contribuir:
+If you want to contribute to the project, your help is highly appreciated. Follow these steps to contribute:
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tu nueva funcionalidad:
+1. Fork the repository.
+2. Create a branch for your new feature:
     ```bash
-    git checkout -b feature/nueva-funcionalidad
+    git checkout -b feature/new-feature
     ```
-3. Realiza tus cambios y haz commit:
+3. Make your changes and commit them:
     ```bash
-    git commit -m "Añade nueva funcionalidad"
+    git commit -m "Add new feature"
     ```
-4. Sube tu rama:
+4. Push your branch:
     ```bash
-    git push origin feature/nueva-funcionalidad
+    git push origin feature/new-feature
     ```
-5. Abre un Pull Request para que pueda revisarlo y fusionarlo.
+5. Open a Pull Request so I can review and merge it.
 
-¡Toda contribución es bienvenida con gratitud!
+All contributions are welcome with gratitude!
 
-## Licencia
+## License
 
-Este proyecto está bajo la [licencia MIT](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
-## Contacto
+## Contact
 
-Para dudas, sugerencias o cualquier otra consulta, puedes contactarme a través de mi [perfil de GitHub](https://github.com/jeronimomayorca).
+For questions, suggestions, or any other inquiries, feel free to contact me through my [GitHub profile](https://github.com/jeronimomayorca).
